@@ -9,7 +9,7 @@ class loginTask extends StatefulWidget {
 
 class _loginTaskState extends State<loginTask> {
   bool valueFirst=false;
-  var x;
+  var name="";
  // var emailController=TextEditingController();
 
   @override
@@ -49,7 +49,7 @@ class _loginTaskState extends State<loginTask> {
             SizedBox(height:10.0),
             TextFormField(
               cursorColor: Colors.white,
-              onFieldSubmitted: (value){ x=value; print(value);},
+              onFieldSubmitted: (value){ name=value; print(value);},
              // autofocus: true,
 
               decoration: InputDecoration(
@@ -88,7 +88,7 @@ class _loginTaskState extends State<loginTask> {
             SizedBox(height:10.0),
 
             TextFormField(
-              onFieldSubmitted: (value){ x=value; print(value);},
+              onFieldSubmitted: (value){ name=value; print(value);},
               keyboardType: TextInputType.emailAddress,
               cursorColor: Colors.white,
               decoration: InputDecoration(
@@ -128,7 +128,7 @@ class _loginTaskState extends State<loginTask> {
             TextFormField(
               keyboardType:TextInputType.visiblePassword,
              // autofocus: true,
-              onFieldSubmitted: (value){ x=value; print(value);},
+              onFieldSubmitted: (value){ name=value; print(value);},
 
 
               obscureText: true,
@@ -205,7 +205,7 @@ class _loginTaskState extends State<loginTask> {
                 color: Colors.black,
 
                 onPressed: (){
-                  showAlertDialog(context,x);
+                  showAlertDialog(context,name);
                 },
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
@@ -293,8 +293,8 @@ class _loginTaskState extends State<loginTask> {
     );
   }
 }
-showAlertDialog(BuildContext context, var x) {
-  if(x!=""){
+showAlertDialog(BuildContext context, var name) {
+  if(name!=""){
   // Create button
   Widget okButton = FlatButton(
     child: Text("OK"),
@@ -309,7 +309,7 @@ showAlertDialog(BuildContext context, var x) {
         style: TextStyle(color: Colors.green, fontSize: 30,fontWeight: FontWeight.bold )),
 
 
-    content: Text("Hello $x",
+    content: Text("Hello $name",
         style: TextStyle(color: Colors.black,fontSize: 25),),
     actions: [
       okButton,
