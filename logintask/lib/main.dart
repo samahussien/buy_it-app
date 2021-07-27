@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'logintask.dart';
+
+import 'modules/home/logintask.dart';
+import 'modules/home/discover.dart';
 void main(){
   runApp(MyApp());
 }
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.orange,
         scaffoldBackgroundColor:Colors.orange,
       ),
-      home: loginTask(),
+      home: LoginTask(),
     );
   }
 }
